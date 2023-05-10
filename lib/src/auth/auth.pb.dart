@@ -539,22 +539,17 @@ class UserRegisterRequest extends $pb.GeneratedMessage {
 
 class UserRegisterResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRegisterResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auth'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
+    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'success')
     ..hasRequiredFields = false
   ;
 
   UserRegisterResponse._() : super();
   factory UserRegisterResponse({
-    $core.String? email,
-    $core.String? password,
+    $core.bool? success,
   }) {
     final _result = create();
-    if (email != null) {
-      _result.email = email;
-    }
-    if (password != null) {
-      _result.password = password;
+    if (success != null) {
+      _result.success = success;
     }
     return _result;
   }
@@ -580,22 +575,13 @@ class UserRegisterResponse extends $pb.GeneratedMessage {
   static UserRegisterResponse? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get email => $_getSZ(0);
+  $core.bool get success => $_getBF(0);
   @$pb.TagNumber(1)
-  set email($core.String v) { $_setString(0, v); }
+  set success($core.bool v) { $_setBool(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasEmail() => $_has(0);
+  $core.bool hasSuccess() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEmail() => clearField(1);
-
-  @$pb.TagNumber(2)
-  $core.String get password => $_getSZ(1);
-  @$pb.TagNumber(2)
-  set password($core.String v) { $_setString(1, v); }
-  @$pb.TagNumber(2)
-  $core.bool hasPassword() => $_has(1);
-  @$pb.TagNumber(2)
-  void clearPassword() => clearField(2);
+  void clearSuccess() => clearField(1);
 }
 
 class PasswordResetRequest extends $pb.GeneratedMessage {

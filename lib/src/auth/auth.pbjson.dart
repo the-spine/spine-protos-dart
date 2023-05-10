@@ -106,13 +106,12 @@ final $typed_data.Uint8List userRegisterRequestDescriptor = $convert.base64Decod
 const UserRegisterResponse$json = const {
   '1': 'UserRegisterResponse',
   '2': const [
-    const {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
+    const {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
   ],
 };
 
 /// Descriptor for `UserRegisterResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRegisterResponseDescriptor = $convert.base64Decode('ChRVc2VyUmVnaXN0ZXJSZXNwb25zZRIUCgVlbWFpbBgBIAEoCVIFZW1haWwSGgoIcGFzc3dvcmQYAiABKAlSCHBhc3N3b3Jk');
+final $typed_data.Uint8List userRegisterResponseDescriptor = $convert.base64Decode('ChRVc2VyUmVnaXN0ZXJSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
 @$core.Deprecated('Use passwordResetRequestDescriptor instead')
 const PasswordResetRequest$json = const {
   '1': 'PasswordResetRequest',

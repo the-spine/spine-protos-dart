@@ -95,13 +95,16 @@ final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxV
 const UserRegisterRequest$json = const {
   '1': 'UserRegisterRequest',
   '2': const [
-    const {'1': 'email', '3': 1, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'password', '3': 2, '4': 1, '5': 9, '10': 'password'},
+    const {'1': 'first_name', '3': 1, '4': 1, '5': 9, '10': 'firstName'},
+    const {'1': 'middle_name', '3': 2, '4': 1, '5': 9, '10': 'middleName'},
+    const {'1': 'last_name', '3': 3, '4': 1, '5': 9, '10': 'lastName'},
+    const {'1': 'email', '3': 4, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'password_hash', '3': 5, '4': 1, '5': 9, '10': 'passwordHash'},
   ],
 };
 
 /// Descriptor for `UserRegisterRequest`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userRegisterRequestDescriptor = $convert.base64Decode('ChNVc2VyUmVnaXN0ZXJSZXF1ZXN0EhQKBWVtYWlsGAEgASgJUgVlbWFpbBIaCghwYXNzd29yZBgCIAEoCVIIcGFzc3dvcmQ=');
+final $typed_data.Uint8List userRegisterRequestDescriptor = $convert.base64Decode('ChNVc2VyUmVnaXN0ZXJSZXF1ZXN0Eh0KCmZpcnN0X25hbWUYASABKAlSCWZpcnN0TmFtZRIfCgttaWRkbGVfbmFtZRgCIAEoCVIKbWlkZGxlTmFtZRIbCglsYXN0X25hbWUYAyABKAlSCGxhc3ROYW1lEhQKBWVtYWlsGAQgASgJUgVlbWFpbBIjCg1wYXNzd29yZF9oYXNoGAUgASgJUgxwYXNzd29yZEhhc2g=');
 @$core.Deprecated('Use userRegisterResponseDescriptor instead')
 const UserRegisterResponse$json = const {
   '1': 'UserRegisterResponse',

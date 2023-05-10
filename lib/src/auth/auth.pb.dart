@@ -478,22 +478,37 @@ class UserResponse extends $pb.GeneratedMessage {
 
 class UserRegisterRequest extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserRegisterRequest', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auth'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'password')
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
+    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'middleName')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'passwordHash')
     ..hasRequiredFields = false
   ;
 
   UserRegisterRequest._() : super();
   factory UserRegisterRequest({
+    $core.String? firstName,
+    $core.String? middleName,
+    $core.String? lastName,
     $core.String? email,
-    $core.String? password,
+    $core.String? passwordHash,
   }) {
     final _result = create();
+    if (firstName != null) {
+      _result.firstName = firstName;
+    }
+    if (middleName != null) {
+      _result.middleName = middleName;
+    }
+    if (lastName != null) {
+      _result.lastName = lastName;
+    }
     if (email != null) {
       _result.email = email;
     }
-    if (password != null) {
-      _result.password = password;
+    if (passwordHash != null) {
+      _result.passwordHash = passwordHash;
     }
     return _result;
   }
@@ -519,22 +534,49 @@ class UserRegisterRequest extends $pb.GeneratedMessage {
   static UserRegisterRequest? _defaultInstance;
 
   @$pb.TagNumber(1)
-  $core.String get email => $_getSZ(0);
+  $core.String get firstName => $_getSZ(0);
   @$pb.TagNumber(1)
-  set email($core.String v) { $_setString(0, v); }
+  set firstName($core.String v) { $_setString(0, v); }
   @$pb.TagNumber(1)
-  $core.bool hasEmail() => $_has(0);
+  $core.bool hasFirstName() => $_has(0);
   @$pb.TagNumber(1)
-  void clearEmail() => clearField(1);
+  void clearFirstName() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get password => $_getSZ(1);
+  $core.String get middleName => $_getSZ(1);
   @$pb.TagNumber(2)
-  set password($core.String v) { $_setString(1, v); }
+  set middleName($core.String v) { $_setString(1, v); }
   @$pb.TagNumber(2)
-  $core.bool hasPassword() => $_has(1);
+  $core.bool hasMiddleName() => $_has(1);
   @$pb.TagNumber(2)
-  void clearPassword() => clearField(2);
+  void clearMiddleName() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get lastName => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set lastName($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasLastName() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearLastName() => clearField(3);
+
+  @$pb.TagNumber(4)
+  $core.String get email => $_getSZ(3);
+  @$pb.TagNumber(4)
+  set email($core.String v) { $_setString(3, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasEmail() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearEmail() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get passwordHash => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set passwordHash($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasPasswordHash() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearPasswordHash() => clearField(5);
 }
 
 class UserRegisterResponse extends $pb.GeneratedMessage {

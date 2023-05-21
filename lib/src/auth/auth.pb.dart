@@ -391,8 +391,12 @@ class UserResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'UserResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auth'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userId')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'userName')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
+    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'firstName')
+    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'middleName')
+    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastName')
+    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'email')
+    ..pc<Role>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'roles', $pb.PbFieldType.PM, subBuilder: Role.create)
+    ..m<$core.String, $core.String>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'metadata', entryClassName: 'UserResponse.MetadataEntry', keyFieldType: $pb.PbFieldType.OS, valueFieldType: $pb.PbFieldType.OS, packageName: const $pb.PackageName('auth'))
     ..hasRequiredFields = false
   ;
 
@@ -400,8 +404,12 @@ class UserResponse extends $pb.GeneratedMessage {
   factory UserResponse({
     $core.String? userId,
     $core.String? userName,
+    $core.String? firstName,
+    $core.String? middleName,
+    $core.String? lastName,
     $core.String? email,
-    $core.String? role,
+    $core.Iterable<Role>? roles,
+    $core.Map<$core.String, $core.String>? metadata,
   }) {
     final _result = create();
     if (userId != null) {
@@ -410,11 +418,23 @@ class UserResponse extends $pb.GeneratedMessage {
     if (userName != null) {
       _result.userName = userName;
     }
+    if (firstName != null) {
+      _result.firstName = firstName;
+    }
+    if (middleName != null) {
+      _result.middleName = middleName;
+    }
+    if (lastName != null) {
+      _result.lastName = lastName;
+    }
     if (email != null) {
       _result.email = email;
     }
-    if (role != null) {
-      _result.role = role;
+    if (roles != null) {
+      _result.roles.addAll(roles);
+    }
+    if (metadata != null) {
+      _result.metadata.addAll(metadata);
     }
     return _result;
   }
@@ -458,22 +478,46 @@ class UserResponse extends $pb.GeneratedMessage {
   void clearUserName() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get email => $_getSZ(2);
+  $core.String get firstName => $_getSZ(2);
   @$pb.TagNumber(3)
-  set email($core.String v) { $_setString(2, v); }
+  set firstName($core.String v) { $_setString(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasEmail() => $_has(2);
+  $core.bool hasFirstName() => $_has(2);
   @$pb.TagNumber(3)
-  void clearEmail() => clearField(3);
+  void clearFirstName() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get role => $_getSZ(3);
+  $core.String get middleName => $_getSZ(3);
   @$pb.TagNumber(4)
-  set role($core.String v) { $_setString(3, v); }
+  set middleName($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasRole() => $_has(3);
+  $core.bool hasMiddleName() => $_has(3);
   @$pb.TagNumber(4)
-  void clearRole() => clearField(4);
+  void clearMiddleName() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get lastName => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set lastName($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasLastName() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearLastName() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get email => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set email($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasEmail() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearEmail() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.List<Role> get roles => $_getList(6);
+
+  @$pb.TagNumber(8)
+  $core.Map<$core.String, $core.String> get metadata => $_getMap(7);
 }
 
 class UserRegisterRequest extends $pb.GeneratedMessage {
@@ -718,5 +762,60 @@ class PasswordResetResponse extends $pb.GeneratedMessage {
   $core.bool hasSuccess() => $_has(0);
   @$pb.TagNumber(1)
   void clearSuccess() => clearField(1);
+}
+
+class Role extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Role', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auth'), createEmptyInstance: create)
+    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'role')
+    ..pPS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'permissions')
+    ..hasRequiredFields = false
+  ;
+
+  Role._() : super();
+  factory Role({
+    $core.String? role,
+    $core.Iterable<$core.String>? permissions,
+  }) {
+    final _result = create();
+    if (role != null) {
+      _result.role = role;
+    }
+    if (permissions != null) {
+      _result.permissions.addAll(permissions);
+    }
+    return _result;
+  }
+  factory Role.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Role.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Role clone() => Role()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Role copyWith(void Function(Role) updates) => super.copyWith((message) => updates(message as Role)) as Role; // ignore: deprecated_member_use
+  $pb.BuilderInfo get info_ => _i;
+  @$core.pragma('dart2js:noInline')
+  static Role create() => Role._();
+  Role createEmptyInstance() => create();
+  static $pb.PbList<Role> createRepeated() => $pb.PbList<Role>();
+  @$core.pragma('dart2js:noInline')
+  static Role getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Role>(create);
+  static Role? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get role => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set role($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasRole() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearRole() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<$core.String> get permissions => $_getList(1);
 }
 

@@ -84,13 +84,28 @@ const UserResponse$json = const {
   '2': const [
     const {'1': 'user_id', '3': 1, '4': 1, '5': 9, '10': 'userId'},
     const {'1': 'user_name', '3': 2, '4': 1, '5': 9, '10': 'userName'},
-    const {'1': 'email', '3': 3, '4': 1, '5': 9, '10': 'email'},
-    const {'1': 'role', '3': 4, '4': 1, '5': 9, '10': 'role'},
+    const {'1': 'first_name', '3': 3, '4': 1, '5': 9, '10': 'firstName'},
+    const {'1': 'middle_name', '3': 4, '4': 1, '5': 9, '10': 'middleName'},
+    const {'1': 'last_name', '3': 5, '4': 1, '5': 9, '10': 'lastName'},
+    const {'1': 'email', '3': 6, '4': 1, '5': 9, '10': 'email'},
+    const {'1': 'roles', '3': 7, '4': 3, '5': 11, '6': '.auth.Role', '10': 'roles'},
+    const {'1': 'metadata', '3': 8, '4': 3, '5': 11, '6': '.auth.UserResponse.MetadataEntry', '10': 'metadata'},
   ],
+  '3': const [UserResponse_MetadataEntry$json],
+};
+
+@$core.Deprecated('Use userResponseDescriptor instead')
+const UserResponse_MetadataEntry$json = const {
+  '1': 'MetadataEntry',
+  '2': const [
+    const {'1': 'key', '3': 1, '4': 1, '5': 9, '10': 'key'},
+    const {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  ],
+  '7': const {'7': true},
 };
 
 /// Descriptor for `UserResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEhsKCXVzZXJfbmFtZRgCIAEoCVIIdXNlck5hbWUSFAoFZW1haWwYAyABKAlSBWVtYWlsEhIKBHJvbGUYBCABKAlSBHJvbGU=');
+final $typed_data.Uint8List userResponseDescriptor = $convert.base64Decode('CgxVc2VyUmVzcG9uc2USFwoHdXNlcl9pZBgBIAEoCVIGdXNlcklkEhsKCXVzZXJfbmFtZRgCIAEoCVIIdXNlck5hbWUSHQoKZmlyc3RfbmFtZRgDIAEoCVIJZmlyc3ROYW1lEh8KC21pZGRsZV9uYW1lGAQgASgJUgptaWRkbGVOYW1lEhsKCWxhc3RfbmFtZRgFIAEoCVIIbGFzdE5hbWUSFAoFZW1haWwYBiABKAlSBWVtYWlsEiAKBXJvbGVzGAcgAygLMgouYXV0aC5Sb2xlUgVyb2xlcxI8CghtZXRhZGF0YRgIIAMoCzIgLmF1dGguVXNlclJlc3BvbnNlLk1ldGFkYXRhRW50cnlSCG1ldGFkYXRhGjsKDU1ldGFkYXRhRW50cnkSEAoDa2V5GAEgASgJUgNrZXkSFAoFdmFsdWUYAiABKAlSBXZhbHVlOgI4AQ==');
 @$core.Deprecated('Use userRegisterRequestDescriptor instead')
 const UserRegisterRequest$json = const {
   '1': 'UserRegisterRequest',
@@ -135,3 +150,14 @@ const PasswordResetResponse$json = const {
 
 /// Descriptor for `PasswordResetResponse`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List passwordResetResponseDescriptor = $convert.base64Decode('ChVQYXNzd29yZFJlc2V0UmVzcG9uc2USGAoHc3VjY2VzcxgBIAEoCFIHc3VjY2Vzcw==');
+@$core.Deprecated('Use roleDescriptor instead')
+const Role$json = const {
+  '1': 'Role',
+  '2': const [
+    const {'1': 'role', '3': 1, '4': 1, '5': 9, '10': 'role'},
+    const {'1': 'permissions', '3': 2, '4': 3, '5': 9, '10': 'permissions'},
+  ],
+};
+
+/// Descriptor for `Role`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List roleDescriptor = $convert.base64Decode('CgRSb2xlEhIKBHJvbGUYASABKAlSBHJvbGUSIAoLcGVybWlzc2lvbnMYAiADKAlSC3Blcm1pc3Npb25z');

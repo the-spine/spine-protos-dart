@@ -25,13 +25,12 @@ const LoginResponse$json = const {
   '2': const [
     const {'1': 'refresh_token', '3': 1, '4': 1, '5': 9, '10': 'refreshToken'},
     const {'1': 'token_type', '3': 2, '4': 1, '5': 9, '10': 'tokenType'},
-    const {'1': 'access_token', '3': 3, '4': 1, '5': 9, '10': 'accessToken'},
-    const {'1': 'expires_in', '3': 4, '4': 1, '5': 3, '10': 'expiresIn'},
+    const {'1': 'expires_in', '3': 3, '4': 1, '5': 3, '10': 'expiresIn'},
   ],
 };
 
 /// Descriptor for `LoginResponse`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode('Cg1Mb2dpblJlc3BvbnNlEiMKDXJlZnJlc2hfdG9rZW4YASABKAlSDHJlZnJlc2hUb2tlbhIdCgp0b2tlbl90eXBlGAIgASgJUgl0b2tlblR5cGUSIQoMYWNjZXNzX3Rva2VuGAMgASgJUgthY2Nlc3NUb2tlbhIdCgpleHBpcmVzX2luGAQgASgDUglleHBpcmVzSW4=');
+final $typed_data.Uint8List loginResponseDescriptor = $convert.base64Decode('Cg1Mb2dpblJlc3BvbnNlEiMKDXJlZnJlc2hfdG9rZW4YASABKAlSDHJlZnJlc2hUb2tlbhIdCgp0b2tlbl90eXBlGAIgASgJUgl0b2tlblR5cGUSHQoKZXhwaXJlc19pbhgDIAEoA1IJZXhwaXJlc0lu');
 @$core.Deprecated('Use logoutRequestDescriptor instead')
 const LogoutRequest$json = const {
   '1': 'LogoutRequest',

@@ -75,8 +75,7 @@ class LoginResponse extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'LoginResponse', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'auth'), createEmptyInstance: create)
     ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refreshToken')
     ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenType')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accessToken')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresIn')
+    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiresIn')
     ..hasRequiredFields = false
   ;
 
@@ -84,7 +83,6 @@ class LoginResponse extends $pb.GeneratedMessage {
   factory LoginResponse({
     $core.String? refreshToken,
     $core.String? tokenType,
-    $core.String? accessToken,
     $fixnum.Int64? expiresIn,
   }) {
     final _result = create();
@@ -93,9 +91,6 @@ class LoginResponse extends $pb.GeneratedMessage {
     }
     if (tokenType != null) {
       _result.tokenType = tokenType;
-    }
-    if (accessToken != null) {
-      _result.accessToken = accessToken;
     }
     if (expiresIn != null) {
       _result.expiresIn = expiresIn;
@@ -142,22 +137,13 @@ class LoginResponse extends $pb.GeneratedMessage {
   void clearTokenType() => clearField(2);
 
   @$pb.TagNumber(3)
-  $core.String get accessToken => $_getSZ(2);
+  $fixnum.Int64 get expiresIn => $_getI64(2);
   @$pb.TagNumber(3)
-  set accessToken($core.String v) { $_setString(2, v); }
+  set expiresIn($fixnum.Int64 v) { $_setInt64(2, v); }
   @$pb.TagNumber(3)
-  $core.bool hasAccessToken() => $_has(2);
+  $core.bool hasExpiresIn() => $_has(2);
   @$pb.TagNumber(3)
-  void clearAccessToken() => clearField(3);
-
-  @$pb.TagNumber(4)
-  $fixnum.Int64 get expiresIn => $_getI64(3);
-  @$pb.TagNumber(4)
-  set expiresIn($fixnum.Int64 v) { $_setInt64(3, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasExpiresIn() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearExpiresIn() => clearField(4);
+  void clearExpiresIn() => clearField(3);
 }
 
 class LogoutRequest extends $pb.GeneratedMessage {

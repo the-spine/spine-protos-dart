@@ -4,3 +4,4 @@
 library spine_protos_dart;
 
 export 'src/auth/auth.pbgrpc.dart';
+export 'src/doctor/doctor.pbgrpc.dart';

@@ -20,18 +20,25 @@ class DoctorServiceClient extends $grpc.Client {
           ($0.RegisterDoctorRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.RegisterDoctorResponse.fromBuffer(value));
-  static final _$updateDoctor =
-      $grpc.ClientMethod<$0.UpdateDoctorRequest, $0.UpdateDoctorResponse>(
-          '/doctor.DoctorService/UpdateDoctor',
-          ($0.UpdateDoctorRequest value) => value.writeToBuffer(),
-          ($core.List<$core.int> value) =>
-              $0.UpdateDoctorResponse.fromBuffer(value));
   static final _$getDoctor =
       $grpc.ClientMethod<$0.GetDoctorRequest, $0.GetDoctorResponse>(
           '/doctor.DoctorService/GetDoctor',
           ($0.GetDoctorRequest value) => value.writeToBuffer(),
           ($core.List<$core.int> value) =>
               $0.GetDoctorResponse.fromBuffer(value));
+  static final _$checkDoctorAvailability = $grpc.ClientMethod<
+          $0.CheckDoctorAvailabilityRequest,
+          $0.CheckDoctorAvailabilityResponse>(
+      '/doctor.DoctorService/CheckDoctorAvailability',
+      ($0.CheckDoctorAvailabilityRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) =>
+          $0.CheckDoctorAvailabilityResponse.fromBuffer(value));
+  static final _$updateDoctor =
+      $grpc.ClientMethod<$0.UpdateDoctorRequest, $0.UpdateDoctorResponse>(
+          '/doctor.DoctorService/UpdateDoctor',
+          ($0.UpdateDoctorRequest value) => value.writeToBuffer(),
+          ($core.List<$core.int> value) =>
+              $0.UpdateDoctorResponse.fromBuffer(value));
   static final _$deleteDoctor =
       $grpc.ClientMethod<$0.DeleteDoctorRequest, $0.DeleteDoctorResponse>(
           '/doctor.DoctorService/DeleteDoctor',
@@ -50,16 +57,23 @@ class DoctorServiceClient extends $grpc.Client {
     return $createUnaryCall(_$registerDoctor, request, options: options);
   }
 
-  $grpc.ResponseFuture<$0.UpdateDoctorResponse> updateDoctor(
-      $0.UpdateDoctorRequest request,
-      {$grpc.CallOptions? options}) {
-    return $createUnaryCall(_$updateDoctor, request, options: options);
-  }
-
   $grpc.ResponseFuture<$0.GetDoctorResponse> getDoctor(
       $0.GetDoctorRequest request,
       {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getDoctor, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.CheckDoctorAvailabilityResponse>
+      checkDoctorAvailability($0.CheckDoctorAvailabilityRequest request,
+          {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$checkDoctorAvailability, request,
+        options: options);
+  }
+
+  $grpc.ResponseFuture<$0.UpdateDoctorResponse> updateDoctor(
+      $0.UpdateDoctorRequest request,
+      {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$updateDoctor, request, options: options);
   }
 
   $grpc.ResponseFuture<$0.DeleteDoctorResponse> deleteDoctor(
@@ -82,6 +96,22 @@ abstract class DoctorServiceBase extends $grpc.Service {
         ($core.List<$core.int> value) =>
             $0.RegisterDoctorRequest.fromBuffer(value),
         ($0.RegisterDoctorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.GetDoctorRequest, $0.GetDoctorResponse>(
+        'GetDoctor',
+        getDoctor_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.GetDoctorRequest.fromBuffer(value),
+        ($0.GetDoctorResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.CheckDoctorAvailabilityRequest,
+            $0.CheckDoctorAvailabilityResponse>(
+        'CheckDoctorAvailability',
+        checkDoctorAvailability_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) =>
+            $0.CheckDoctorAvailabilityRequest.fromBuffer(value),
+        ($0.CheckDoctorAvailabilityResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.UpdateDoctorRequest, $0.UpdateDoctorResponse>(
             'UpdateDoctor',
@@ -91,13 +121,6 @@ abstract class DoctorServiceBase extends $grpc.Service {
             ($core.List<$core.int> value) =>
                 $0.UpdateDoctorRequest.fromBuffer(value),
             ($0.UpdateDoctorResponse value) => value.writeToBuffer()));
-    $addMethod($grpc.ServiceMethod<$0.GetDoctorRequest, $0.GetDoctorResponse>(
-        'GetDoctor',
-        getDoctor_Pre,
-        false,
-        false,
-        ($core.List<$core.int> value) => $0.GetDoctorRequest.fromBuffer(value),
-        ($0.GetDoctorResponse value) => value.writeToBuffer()));
     $addMethod(
         $grpc.ServiceMethod<$0.DeleteDoctorRequest, $0.DeleteDoctorResponse>(
             'DeleteDoctor',
@@ -115,15 +138,21 @@ abstract class DoctorServiceBase extends $grpc.Service {
     return registerDoctor(call, await request);
   }
 
+  $async.Future<$0.GetDoctorResponse> getDoctor_Pre($grpc.ServiceCall call,
+      $async.Future<$0.GetDoctorRequest> request) async {
+    return getDoctor(call, await request);
+  }
+
+  $async.Future<$0.CheckDoctorAvailabilityResponse> checkDoctorAvailability_Pre(
+      $grpc.ServiceCall call,
+      $async.Future<$0.CheckDoctorAvailabilityRequest> request) async {
+    return checkDoctorAvailability(call, await request);
+  }
+
   $async.Future<$0.UpdateDoctorResponse> updateDoctor_Pre(
       $grpc.ServiceCall call,
       $async.Future<$0.UpdateDoctorRequest> request) async {
     return updateDoctor(call, await request);
-  }
-
-  $async.Future<$0.GetDoctorResponse> getDoctor_Pre($grpc.ServiceCall call,
-      $async.Future<$0.GetDoctorRequest> request) async {
-    return getDoctor(call, await request);
   }
 
   $async.Future<$0.DeleteDoctorResponse> deleteDoctor_Pre(
@@ -134,10 +163,12 @@ abstract class DoctorServiceBase extends $grpc.Service {
 
   $async.Future<$0.RegisterDoctorResponse> registerDoctor(
       $grpc.ServiceCall call, $0.RegisterDoctorRequest request);
-  $async.Future<$0.UpdateDoctorResponse> updateDoctor(
-      $grpc.ServiceCall call, $0.UpdateDoctorRequest request);
   $async.Future<$0.GetDoctorResponse> getDoctor(
       $grpc.ServiceCall call, $0.GetDoctorRequest request);
+  $async.Future<$0.CheckDoctorAvailabilityResponse> checkDoctorAvailability(
+      $grpc.ServiceCall call, $0.CheckDoctorAvailabilityRequest request);
+  $async.Future<$0.UpdateDoctorResponse> updateDoctor(
+      $grpc.ServiceCall call, $0.UpdateDoctorRequest request);
   $async.Future<$0.DeleteDoctorResponse> deleteDoctor(
       $grpc.ServiceCall call, $0.DeleteDoctorRequest request);
 }

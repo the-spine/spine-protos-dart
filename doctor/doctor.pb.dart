@@ -363,7 +363,6 @@ class ContactDetails extends $pb.GeneratedMessage {
     $core.String? email,
     $core.String? website,
     $core.String? emergencyContact,
-    Address? address,
   }) {
     final $result = create();
     if (phoneNumber != null) {
@@ -378,9 +377,6 @@ class ContactDetails extends $pb.GeneratedMessage {
     if (emergencyContact != null) {
       $result.emergencyContact = emergencyContact;
     }
-    if (address != null) {
-      $result.address = address;
-    }
     return $result;
   }
   ContactDetails._() : super();
@@ -392,7 +388,6 @@ class ContactDetails extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOS(3, _omitFieldNames ? '' : 'website')
     ..aOS(4, _omitFieldNames ? '' : 'emergencyContact')
-    ..aOM<Address>(5, _omitFieldNames ? '' : 'address', subBuilder: Address.create)
     ..hasRequiredFields = false
   ;
 
@@ -452,17 +447,6 @@ class ContactDetails extends $pb.GeneratedMessage {
   $core.bool hasEmergencyContact() => $_has(3);
   @$pb.TagNumber(4)
   void clearEmergencyContact() => clearField(4);
-
-  @$pb.TagNumber(5)
-  Address get address => $_getN(4);
-  @$pb.TagNumber(5)
-  set address(Address v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasAddress() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearAddress() => clearField(5);
-  @$pb.TagNumber(5)
-  Address ensureAddress() => $_ensure(4);
 }
 
 class Doctor extends $pb.GeneratedMessage {
@@ -473,6 +457,7 @@ class Doctor extends $pb.GeneratedMessage {
     $core.Iterable<Education>? educations,
     ContactDetails? contactDetails,
     $core.Iterable<AvailableHour>? availableHours,
+    Address? address,
   }) {
     final $result = create();
     if (id != null) {
@@ -493,6 +478,9 @@ class Doctor extends $pb.GeneratedMessage {
     if (availableHours != null) {
       $result.availableHours.addAll(availableHours);
     }
+    if (address != null) {
+      $result.address = address;
+    }
     return $result;
   }
   Doctor._() : super();
@@ -506,6 +494,7 @@ class Doctor extends $pb.GeneratedMessage {
     ..pc<Education>(4, _omitFieldNames ? '' : 'educations', $pb.PbFieldType.PM, subBuilder: Education.create)
     ..aOM<ContactDetails>(5, _omitFieldNames ? '' : 'contactDetails', subBuilder: ContactDetails.create)
     ..pc<AvailableHour>(6, _omitFieldNames ? '' : 'availableHours', $pb.PbFieldType.PM, subBuilder: AvailableHour.create)
+    ..aOM<Address>(7, _omitFieldNames ? '' : 'address', subBuilder: Address.create)
     ..hasRequiredFields = false
   ;
 
@@ -575,6 +564,17 @@ class Doctor extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(6)
   $core.List<AvailableHour> get availableHours => $_getList(5);
+
+  @$pb.TagNumber(7)
+  Address get address => $_getN(6);
+  @$pb.TagNumber(7)
+  set address(Address v) { setField(7, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasAddress() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearAddress() => clearField(7);
+  @$pb.TagNumber(7)
+  Address ensureAddress() => $_ensure(6);
 }
 
 class RegisterDoctorRequest extends $pb.GeneratedMessage {

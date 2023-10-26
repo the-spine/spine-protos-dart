@@ -104,7 +104,6 @@ const ContactDetails$json = {
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'website', '3': 3, '4': 1, '5': 9, '10': 'website'},
     {'1': 'emergency_contact', '3': 4, '4': 1, '5': 9, '10': 'emergencyContact'},
-    {'1': 'address', '3': 5, '4': 1, '5': 11, '6': '.doctor.Address', '10': 'address'},
   ],
 };
 
@@ -112,8 +111,7 @@ const ContactDetails$json = {
 final $typed_data.Uint8List contactDetailsDescriptor = $convert.base64Decode(
     'Cg5Db250YWN0RGV0YWlscxIhCgxwaG9uZV9udW1iZXIYASABKAlSC3Bob25lTnVtYmVyEhQKBW'
     'VtYWlsGAIgASgJUgVlbWFpbBIYCgd3ZWJzaXRlGAMgASgJUgd3ZWJzaXRlEisKEWVtZXJnZW5j'
-    'eV9jb250YWN0GAQgASgJUhBlbWVyZ2VuY3lDb250YWN0EikKB2FkZHJlc3MYBSABKAsyDy5kb2'
-    'N0b3IuQWRkcmVzc1IHYWRkcmVzcw==');
+    'eV9jb250YWN0GAQgASgJUhBlbWVyZ2VuY3lDb250YWN0');
 
 @$core.Deprecated('Use doctorDescriptor instead')
 const Doctor$json = {
@@ -125,6 +123,7 @@ const Doctor$json = {
     {'1': 'educations', '3': 4, '4': 3, '5': 11, '6': '.doctor.Education', '10': 'educations'},
     {'1': 'contact_details', '3': 5, '4': 1, '5': 11, '6': '.doctor.ContactDetails', '10': 'contactDetails'},
     {'1': 'available_hours', '3': 6, '4': 3, '5': 11, '6': '.doctor.AvailableHour', '10': 'availableHours'},
+    {'1': 'address', '3': 7, '4': 1, '5': 11, '6': '.doctor.Address', '10': 'address'},
   ],
 };
 
@@ -134,7 +133,8 @@ final $typed_data.Uint8List doctorDescriptor = $convert.base64Decode(
     'FtZRIcCglzcGVjaWFsdHkYAyABKAlSCXNwZWNpYWx0eRIxCgplZHVjYXRpb25zGAQgAygLMhEu'
     'ZG9jdG9yLkVkdWNhdGlvblIKZWR1Y2F0aW9ucxI/Cg9jb250YWN0X2RldGFpbHMYBSABKAsyFi'
     '5kb2N0b3IuQ29udGFjdERldGFpbHNSDmNvbnRhY3REZXRhaWxzEj4KD2F2YWlsYWJsZV9ob3Vy'
-    'cxgGIAMoCzIVLmRvY3Rvci5BdmFpbGFibGVIb3VyUg5hdmFpbGFibGVIb3Vycw==');
+    'cxgGIAMoCzIVLmRvY3Rvci5BdmFpbGFibGVIb3VyUg5hdmFpbGFibGVIb3VycxIpCgdhZGRyZX'
+    'NzGAcgASgLMg8uZG9jdG9yLkFkZHJlc3NSB2FkZHJlc3M=');
 
 @$core.Deprecated('Use registerDoctorRequestDescriptor instead')
 const RegisterDoctorRequest$json = {

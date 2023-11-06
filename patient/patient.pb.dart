@@ -202,7 +202,6 @@ class ContactDetails extends $pb.GeneratedMessage {
     $core.String? phoneNumber,
     $core.String? email,
     $core.String? emergencyContact,
-    Address? address,
   }) {
     final $result = create();
     if (phoneNumber != null) {
@@ -214,9 +213,6 @@ class ContactDetails extends $pb.GeneratedMessage {
     if (emergencyContact != null) {
       $result.emergencyContact = emergencyContact;
     }
-    if (address != null) {
-      $result.address = address;
-    }
     return $result;
   }
   ContactDetails._() : super();
@@ -227,7 +223,6 @@ class ContactDetails extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'phoneNumber')
     ..aOS(2, _omitFieldNames ? '' : 'email')
     ..aOS(3, _omitFieldNames ? '' : 'emergencyContact')
-    ..aOM<Address>(4, _omitFieldNames ? '' : 'address', subBuilder: Address.create)
     ..hasRequiredFields = false
   ;
 
@@ -278,17 +273,6 @@ class ContactDetails extends $pb.GeneratedMessage {
   $core.bool hasEmergencyContact() => $_has(2);
   @$pb.TagNumber(3)
   void clearEmergencyContact() => clearField(3);
-
-  @$pb.TagNumber(4)
-  Address get address => $_getN(3);
-  @$pb.TagNumber(4)
-  set address(Address v) { setField(4, v); }
-  @$pb.TagNumber(4)
-  $core.bool hasAddress() => $_has(3);
-  @$pb.TagNumber(4)
-  void clearAddress() => clearField(4);
-  @$pb.TagNumber(4)
-  Address ensureAddress() => $_ensure(3);
 }
 
 class MedicalRecord extends $pb.GeneratedMessage {
@@ -297,6 +281,7 @@ class MedicalRecord extends $pb.GeneratedMessage {
     $core.String? date,
     $core.String? condition,
     $core.String? treatment,
+    $core.String? observation,
   }) {
     final $result = create();
     if (recordId != null) {
@@ -311,6 +296,9 @@ class MedicalRecord extends $pb.GeneratedMessage {
     if (treatment != null) {
       $result.treatment = treatment;
     }
+    if (observation != null) {
+      $result.observation = observation;
+    }
     return $result;
   }
   MedicalRecord._() : super();
@@ -322,6 +310,7 @@ class MedicalRecord extends $pb.GeneratedMessage {
     ..aOS(2, _omitFieldNames ? '' : 'date')
     ..aOS(3, _omitFieldNames ? '' : 'condition')
     ..aOS(4, _omitFieldNames ? '' : 'treatment')
+    ..aOS(5, _omitFieldNames ? '' : 'observation')
     ..hasRequiredFields = false
   ;
 
@@ -381,6 +370,79 @@ class MedicalRecord extends $pb.GeneratedMessage {
   $core.bool hasTreatment() => $_has(3);
   @$pb.TagNumber(4)
   void clearTreatment() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get observation => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set observation($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasObservation() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearObservation() => clearField(5);
+}
+
+class Allergy extends $pb.GeneratedMessage {
+  factory Allergy({
+    $core.String? name,
+    $core.int? level,
+  }) {
+    final $result = create();
+    if (name != null) {
+      $result.name = name;
+    }
+    if (level != null) {
+      $result.level = level;
+    }
+    return $result;
+  }
+  Allergy._() : super();
+  factory Allergy.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory Allergy.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Allergy', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'name')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'level', $pb.PbFieldType.O3)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  Allergy clone() => Allergy()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  Allergy copyWith(void Function(Allergy) updates) => super.copyWith((message) => updates(message as Allergy)) as Allergy;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static Allergy create() => Allergy._();
+  Allergy createEmptyInstance() => create();
+  static $pb.PbList<Allergy> createRepeated() => $pb.PbList<Allergy>();
+  @$core.pragma('dart2js:noInline')
+  static Allergy getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Allergy>(create);
+  static Allergy? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get name => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set name($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasName() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearName() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.int get level => $_getIZ(1);
+  @$pb.TagNumber(2)
+  set level($core.int v) { $_setSignedInt32(1, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasLevel() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearLevel() => clearField(2);
 }
 
 class MedicalHistory extends $pb.GeneratedMessage {
@@ -446,6 +508,8 @@ class Patient extends $pb.GeneratedMessage {
     $core.String? id,
     Name? name,
     ContactDetails? contactDetails,
+    Address? address,
+    $core.Iterable<Allergy>? allergies,
   }) {
     final $result = create();
     if (id != null) {
@@ -457,6 +521,12 @@ class Patient extends $pb.GeneratedMessage {
     if (contactDetails != null) {
       $result.contactDetails = contactDetails;
     }
+    if (address != null) {
+      $result.address = address;
+    }
+    if (allergies != null) {
+      $result.allergies.addAll(allergies);
+    }
     return $result;
   }
   Patient._() : super();
@@ -467,6 +537,8 @@ class Patient extends $pb.GeneratedMessage {
     ..aOS(1, _omitFieldNames ? '' : 'id')
     ..aOM<Name>(2, _omitFieldNames ? '' : 'name', subBuilder: Name.create)
     ..aOM<ContactDetails>(3, _omitFieldNames ? '' : 'contactDetails', subBuilder: ContactDetails.create)
+    ..aOM<Address>(4, _omitFieldNames ? '' : 'address', subBuilder: Address.create)
+    ..pc<Allergy>(5, _omitFieldNames ? '' : 'allergies', $pb.PbFieldType.PM, subBuilder: Allergy.create)
     ..hasRequiredFields = false
   ;
 
@@ -521,6 +593,20 @@ class Patient extends $pb.GeneratedMessage {
   void clearContactDetails() => clearField(3);
   @$pb.TagNumber(3)
   ContactDetails ensureContactDetails() => $_ensure(2);
+
+  @$pb.TagNumber(4)
+  Address get address => $_getN(3);
+  @$pb.TagNumber(4)
+  set address(Address v) { setField(4, v); }
+  @$pb.TagNumber(4)
+  $core.bool hasAddress() => $_has(3);
+  @$pb.TagNumber(4)
+  void clearAddress() => clearField(4);
+  @$pb.TagNumber(4)
+  Address ensureAddress() => $_ensure(3);
+
+  @$pb.TagNumber(5)
+  $core.List<Allergy> get allergies => $_getList(4);
 }
 
 class RegisterPatientRequest extends $pb.GeneratedMessage {

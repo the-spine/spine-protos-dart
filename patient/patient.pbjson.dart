@@ -53,7 +53,6 @@ const ContactDetails$json = {
     {'1': 'phone_number', '3': 1, '4': 1, '5': 9, '10': 'phoneNumber'},
     {'1': 'email', '3': 2, '4': 1, '5': 9, '10': 'email'},
     {'1': 'emergency_contact', '3': 3, '4': 1, '5': 9, '10': 'emergencyContact'},
-    {'1': 'address', '3': 4, '4': 1, '5': 11, '6': '.patient.Address', '10': 'address'},
   ],
 };
 
@@ -61,7 +60,7 @@ const ContactDetails$json = {
 final $typed_data.Uint8List contactDetailsDescriptor = $convert.base64Decode(
     'Cg5Db250YWN0RGV0YWlscxIhCgxwaG9uZV9udW1iZXIYASABKAlSC3Bob25lTnVtYmVyEhQKBW'
     'VtYWlsGAIgASgJUgVlbWFpbBIrChFlbWVyZ2VuY3lfY29udGFjdBgDIAEoCVIQZW1lcmdlbmN5'
-    'Q29udGFjdBIqCgdhZGRyZXNzGAQgASgLMhAucGF0aWVudC5BZGRyZXNzUgdhZGRyZXNz');
+    'Q29udGFjdA==');
 
 @$core.Deprecated('Use medicalRecordDescriptor instead')
 const MedicalRecord$json = {
@@ -71,6 +70,7 @@ const MedicalRecord$json = {
     {'1': 'date', '3': 2, '4': 1, '5': 9, '10': 'date'},
     {'1': 'condition', '3': 3, '4': 1, '5': 9, '10': 'condition'},
     {'1': 'treatment', '3': 4, '4': 1, '5': 9, '10': 'treatment'},
+    {'1': 'observation', '3': 5, '4': 1, '5': 9, '10': 'observation'},
   ],
 };
 
@@ -78,7 +78,20 @@ const MedicalRecord$json = {
 final $typed_data.Uint8List medicalRecordDescriptor = $convert.base64Decode(
     'Cg1NZWRpY2FsUmVjb3JkEhsKCXJlY29yZF9pZBgBIAEoBVIIcmVjb3JkSWQSEgoEZGF0ZRgCIA'
     'EoCVIEZGF0ZRIcCgljb25kaXRpb24YAyABKAlSCWNvbmRpdGlvbhIcCgl0cmVhdG1lbnQYBCAB'
-    'KAlSCXRyZWF0bWVudA==');
+    'KAlSCXRyZWF0bWVudBIgCgtvYnNlcnZhdGlvbhgFIAEoCVILb2JzZXJ2YXRpb24=');
+
+@$core.Deprecated('Use allergyDescriptor instead')
+const Allergy$json = {
+  '1': 'Allergy',
+  '2': [
+    {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
+    {'1': 'level', '3': 2, '4': 1, '5': 5, '10': 'level'},
+  ],
+};
+
+/// Descriptor for `Allergy`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List allergyDescriptor = $convert.base64Decode(
+    'CgdBbGxlcmd5EhIKBG5hbWUYASABKAlSBG5hbWUSFAoFbGV2ZWwYAiABKAVSBWxldmVs');
 
 @$core.Deprecated('Use medicalHistoryDescriptor instead')
 const MedicalHistory$json = {
@@ -101,6 +114,8 @@ const Patient$json = {
     {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
     {'1': 'name', '3': 2, '4': 1, '5': 11, '6': '.patient.Name', '10': 'name'},
     {'1': 'contact_details', '3': 3, '4': 1, '5': 11, '6': '.patient.ContactDetails', '10': 'contactDetails'},
+    {'1': 'address', '3': 4, '4': 1, '5': 11, '6': '.patient.Address', '10': 'address'},
+    {'1': 'allergies', '3': 5, '4': 3, '5': 11, '6': '.patient.Allergy', '10': 'allergies'},
   ],
 };
 
@@ -108,7 +123,8 @@ const Patient$json = {
 final $typed_data.Uint8List patientDescriptor = $convert.base64Decode(
     'CgdQYXRpZW50Eg4KAmlkGAEgASgJUgJpZBIhCgRuYW1lGAIgASgLMg0ucGF0aWVudC5OYW1lUg'
     'RuYW1lEkAKD2NvbnRhY3RfZGV0YWlscxgDIAEoCzIXLnBhdGllbnQuQ29udGFjdERldGFpbHNS'
-    'DmNvbnRhY3REZXRhaWxz');
+    'DmNvbnRhY3REZXRhaWxzEioKB2FkZHJlc3MYBCABKAsyEC5wYXRpZW50LkFkZHJlc3NSB2FkZH'
+    'Jlc3MSLgoJYWxsZXJnaWVzGAUgAygLMhAucGF0aWVudC5BbGxlcmd5UglhbGxlcmdpZXM=');
 
 @$core.Deprecated('Use registerPatientRequestDescriptor instead')
 const RegisterPatientRequest$json = {

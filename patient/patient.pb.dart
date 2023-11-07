@@ -11,6 +11,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 class Name extends $pb.GeneratedMessage {
@@ -510,6 +511,8 @@ class Patient extends $pb.GeneratedMessage {
     ContactDetails? contactDetails,
     Address? address,
     $core.Iterable<Allergy>? allergies,
+    $fixnum.Int64? birthDate,
+    $core.String? gender,
   }) {
     final $result = create();
     if (id != null) {
@@ -527,6 +530,12 @@ class Patient extends $pb.GeneratedMessage {
     if (allergies != null) {
       $result.allergies.addAll(allergies);
     }
+    if (birthDate != null) {
+      $result.birthDate = birthDate;
+    }
+    if (gender != null) {
+      $result.gender = gender;
+    }
     return $result;
   }
   Patient._() : super();
@@ -539,6 +548,8 @@ class Patient extends $pb.GeneratedMessage {
     ..aOM<ContactDetails>(3, _omitFieldNames ? '' : 'contactDetails', subBuilder: ContactDetails.create)
     ..aOM<Address>(4, _omitFieldNames ? '' : 'address', subBuilder: Address.create)
     ..pc<Allergy>(5, _omitFieldNames ? '' : 'allergies', $pb.PbFieldType.PM, subBuilder: Allergy.create)
+    ..aInt64(6, _omitFieldNames ? '' : 'birthDate')
+    ..aOS(7, _omitFieldNames ? '' : 'gender')
     ..hasRequiredFields = false
   ;
 
@@ -607,6 +618,24 @@ class Patient extends $pb.GeneratedMessage {
 
   @$pb.TagNumber(5)
   $core.List<Allergy> get allergies => $_getList(4);
+
+  @$pb.TagNumber(6)
+  $fixnum.Int64 get birthDate => $_getI64(5);
+  @$pb.TagNumber(6)
+  set birthDate($fixnum.Int64 v) { $_setInt64(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasBirthDate() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearBirthDate() => clearField(6);
+
+  @$pb.TagNumber(7)
+  $core.String get gender => $_getSZ(6);
+  @$pb.TagNumber(7)
+  set gender($core.String v) { $_setString(6, v); }
+  @$pb.TagNumber(7)
+  $core.bool hasGender() => $_has(6);
+  @$pb.TagNumber(7)
+  void clearGender() => clearField(7);
 }
 
 class RegisterPatientRequest extends $pb.GeneratedMessage {

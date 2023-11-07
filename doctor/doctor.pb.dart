@@ -11,6 +11,7 @@
 
 import 'dart:core' as $core;
 
+import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'doctor.pbenum.dart';
@@ -458,6 +459,8 @@ class Doctor extends $pb.GeneratedMessage {
     ContactDetails? contactDetails,
     $core.Iterable<AvailableHour>? availableHours,
     Address? address,
+    $fixnum.Int64? birthDate,
+    $core.String? gender,
   }) {
     final $result = create();
     if (id != null) {
@@ -481,6 +484,12 @@ class Doctor extends $pb.GeneratedMessage {
     if (address != null) {
       $result.address = address;
     }
+    if (birthDate != null) {
+      $result.birthDate = birthDate;
+    }
+    if (gender != null) {
+      $result.gender = gender;
+    }
     return $result;
   }
   Doctor._() : super();
@@ -495,6 +504,8 @@ class Doctor extends $pb.GeneratedMessage {
     ..aOM<ContactDetails>(5, _omitFieldNames ? '' : 'contactDetails', subBuilder: ContactDetails.create)
     ..pc<AvailableHour>(6, _omitFieldNames ? '' : 'availableHours', $pb.PbFieldType.PM, subBuilder: AvailableHour.create)
     ..aOM<Address>(7, _omitFieldNames ? '' : 'address', subBuilder: Address.create)
+    ..aInt64(8, _omitFieldNames ? '' : 'birthDate')
+    ..aOS(9, _omitFieldNames ? '' : 'gender')
     ..hasRequiredFields = false
   ;
 
@@ -575,6 +586,24 @@ class Doctor extends $pb.GeneratedMessage {
   void clearAddress() => clearField(7);
   @$pb.TagNumber(7)
   Address ensureAddress() => $_ensure(6);
+
+  @$pb.TagNumber(8)
+  $fixnum.Int64 get birthDate => $_getI64(7);
+  @$pb.TagNumber(8)
+  set birthDate($fixnum.Int64 v) { $_setInt64(7, v); }
+  @$pb.TagNumber(8)
+  $core.bool hasBirthDate() => $_has(7);
+  @$pb.TagNumber(8)
+  void clearBirthDate() => clearField(8);
+
+  @$pb.TagNumber(9)
+  $core.String get gender => $_getSZ(8);
+  @$pb.TagNumber(9)
+  set gender($core.String v) { $_setString(8, v); }
+  @$pb.TagNumber(9)
+  $core.bool hasGender() => $_has(8);
+  @$pb.TagNumber(9)
+  void clearGender() => clearField(9);
 }
 
 class RegisterDoctorRequest extends $pb.GeneratedMessage {

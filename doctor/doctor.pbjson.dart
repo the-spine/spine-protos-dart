@@ -124,6 +124,8 @@ const Doctor$json = {
     {'1': 'contact_details', '3': 5, '4': 1, '5': 11, '6': '.doctor.ContactDetails', '10': 'contactDetails'},
     {'1': 'available_hours', '3': 6, '4': 3, '5': 11, '6': '.doctor.AvailableHour', '10': 'availableHours'},
     {'1': 'address', '3': 7, '4': 1, '5': 11, '6': '.doctor.Address', '10': 'address'},
+    {'1': 'birth_date', '3': 8, '4': 1, '5': 3, '10': 'birthDate'},
+    {'1': 'gender', '3': 9, '4': 1, '5': 9, '10': 'gender'},
   ],
 };
 
@@ -134,7 +136,8 @@ final $typed_data.Uint8List doctorDescriptor = $convert.base64Decode(
     'ZG9jdG9yLkVkdWNhdGlvblIKZWR1Y2F0aW9ucxI/Cg9jb250YWN0X2RldGFpbHMYBSABKAsyFi'
     '5kb2N0b3IuQ29udGFjdERldGFpbHNSDmNvbnRhY3REZXRhaWxzEj4KD2F2YWlsYWJsZV9ob3Vy'
     'cxgGIAMoCzIVLmRvY3Rvci5BdmFpbGFibGVIb3VyUg5hdmFpbGFibGVIb3VycxIpCgdhZGRyZX'
-    'NzGAcgASgLMg8uZG9jdG9yLkFkZHJlc3NSB2FkZHJlc3M=');
+    'NzGAcgASgLMg8uZG9jdG9yLkFkZHJlc3NSB2FkZHJlc3MSHQoKYmlydGhfZGF0ZRgIIAEoA1IJ'
+    'YmlydGhEYXRlEhYKBmdlbmRlchgJIAEoCVIGZ2VuZGVy');
 
 @$core.Deprecated('Use registerDoctorRequestDescriptor instead')
 const RegisterDoctorRequest$json = {

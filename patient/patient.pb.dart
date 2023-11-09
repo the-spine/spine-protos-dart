@@ -513,6 +513,7 @@ class Patient extends $pb.GeneratedMessage {
     $core.Iterable<Allergy>? allergies,
     $fixnum.Int64? birthDate,
     $core.String? gender,
+    $core.Iterable<MedicalRecord>? medicalRecords,
   }) {
     final $result = create();
     if (id != null) {
@@ -536,6 +537,9 @@ class Patient extends $pb.GeneratedMessage {
     if (gender != null) {
       $result.gender = gender;
     }
+    if (medicalRecords != null) {
+      $result.medicalRecords.addAll(medicalRecords);
+    }
     return $result;
   }
   Patient._() : super();
@@ -550,6 +554,7 @@ class Patient extends $pb.GeneratedMessage {
     ..pc<Allergy>(5, _omitFieldNames ? '' : 'allergies', $pb.PbFieldType.PM, subBuilder: Allergy.create)
     ..aInt64(6, _omitFieldNames ? '' : 'birthDate')
     ..aOS(7, _omitFieldNames ? '' : 'gender')
+    ..pc<MedicalRecord>(8, _omitFieldNames ? '' : 'medicalRecords', $pb.PbFieldType.PM, subBuilder: MedicalRecord.create)
     ..hasRequiredFields = false
   ;
 
@@ -636,6 +641,9 @@ class Patient extends $pb.GeneratedMessage {
   $core.bool hasGender() => $_has(6);
   @$pb.TagNumber(7)
   void clearGender() => clearField(7);
+
+  @$pb.TagNumber(8)
+  $core.List<MedicalRecord> get medicalRecords => $_getList(7);
 }
 
 class RegisterPatientRequest extends $pb.GeneratedMessage {

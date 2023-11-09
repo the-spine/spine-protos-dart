@@ -118,6 +118,7 @@ const Patient$json = {
     {'1': 'allergies', '3': 5, '4': 3, '5': 11, '6': '.patient.Allergy', '10': 'allergies'},
     {'1': 'birth_date', '3': 6, '4': 1, '5': 3, '10': 'birthDate'},
     {'1': 'gender', '3': 7, '4': 1, '5': 9, '10': 'gender'},
+    {'1': 'medical_records', '3': 8, '4': 3, '5': 11, '6': '.patient.MedicalRecord', '10': 'medicalRecords'},
   ],
 };
 
@@ -127,7 +128,9 @@ final $typed_data.Uint8List patientDescriptor = $convert.base64Decode(
     'RuYW1lEkAKD2NvbnRhY3RfZGV0YWlscxgDIAEoCzIXLnBhdGllbnQuQ29udGFjdERldGFpbHNS'
     'DmNvbnRhY3REZXRhaWxzEioKB2FkZHJlc3MYBCABKAsyEC5wYXRpZW50LkFkZHJlc3NSB2FkZH'
     'Jlc3MSLgoJYWxsZXJnaWVzGAUgAygLMhAucGF0aWVudC5BbGxlcmd5UglhbGxlcmdpZXMSHQoK'
-    'YmlydGhfZGF0ZRgGIAEoA1IJYmlydGhEYXRlEhYKBmdlbmRlchgHIAEoCVIGZ2VuZGVy');
+    'YmlydGhfZGF0ZRgGIAEoA1IJYmlydGhEYXRlEhYKBmdlbmRlchgHIAEoCVIGZ2VuZGVyEj8KD2'
+    '1lZGljYWxfcmVjb3JkcxgIIAMoCzIWLnBhdGllbnQuTWVkaWNhbFJlY29yZFIObWVkaWNhbFJl'
+    'Y29yZHM=');
 
 @$core.Deprecated('Use registerPatientRequestDescriptor instead')
 const RegisterPatientRequest$json = {

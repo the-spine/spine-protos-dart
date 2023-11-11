@@ -67,7 +67,7 @@ const MedicalRecord$json = {
   '1': 'MedicalRecord',
   '2': [
     {'1': 'record_id', '3': 1, '4': 1, '5': 5, '10': 'recordId'},
-    {'1': 'date', '3': 2, '4': 1, '5': 9, '10': 'date'},
+    {'1': 'date', '3': 2, '4': 1, '5': 3, '10': 'date'},
     {'1': 'condition', '3': 3, '4': 1, '5': 9, '10': 'condition'},
     {'1': 'treatment', '3': 4, '4': 1, '5': 9, '10': 'treatment'},
     {'1': 'observation', '3': 5, '4': 1, '5': 9, '10': 'observation'},
@@ -77,7 +77,7 @@ const MedicalRecord$json = {
 /// Descriptor for `MedicalRecord`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List medicalRecordDescriptor = $convert.base64Decode(
     'Cg1NZWRpY2FsUmVjb3JkEhsKCXJlY29yZF9pZBgBIAEoBVIIcmVjb3JkSWQSEgoEZGF0ZRgCIA'
-    'EoCVIEZGF0ZRIcCgljb25kaXRpb24YAyABKAlSCWNvbmRpdGlvbhIcCgl0cmVhdG1lbnQYBCAB'
+    'EoA1IEZGF0ZRIcCgljb25kaXRpb24YAyABKAlSCWNvbmRpdGlvbhIcCgl0cmVhdG1lbnQYBCAB'
     'KAlSCXRyZWF0bWVudBIgCgtvYnNlcnZhdGlvbhgFIAEoCVILb2JzZXJ2YXRpb24=');
 
 @$core.Deprecated('Use allergyDescriptor instead')

@@ -279,7 +279,7 @@ class ContactDetails extends $pb.GeneratedMessage {
 class MedicalRecord extends $pb.GeneratedMessage {
   factory MedicalRecord({
     $core.int? recordId,
-    $core.String? date,
+    $fixnum.Int64? date,
     $core.String? condition,
     $core.String? treatment,
     $core.String? observation,
@@ -308,7 +308,7 @@ class MedicalRecord extends $pb.GeneratedMessage {
 
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'MedicalRecord', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
     ..a<$core.int>(1, _omitFieldNames ? '' : 'recordId', $pb.PbFieldType.O3)
-    ..aOS(2, _omitFieldNames ? '' : 'date')
+    ..aInt64(2, _omitFieldNames ? '' : 'date')
     ..aOS(3, _omitFieldNames ? '' : 'condition')
     ..aOS(4, _omitFieldNames ? '' : 'treatment')
     ..aOS(5, _omitFieldNames ? '' : 'observation')
@@ -346,9 +346,9 @@ class MedicalRecord extends $pb.GeneratedMessage {
   void clearRecordId() => clearField(1);
 
   @$pb.TagNumber(2)
-  $core.String get date => $_getSZ(1);
+  $fixnum.Int64 get date => $_getI64(1);
   @$pb.TagNumber(2)
-  set date($core.String v) { $_setString(1, v); }
+  set date($fixnum.Int64 v) { $_setInt64(1, v); }
   @$pb.TagNumber(2)
   $core.bool hasDate() => $_has(1);
   @$pb.TagNumber(2)

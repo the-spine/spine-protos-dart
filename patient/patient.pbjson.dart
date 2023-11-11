@@ -71,6 +71,7 @@ const MedicalRecord$json = {
     {'1': 'condition', '3': 3, '4': 1, '5': 9, '10': 'condition'},
     {'1': 'treatment', '3': 4, '4': 1, '5': 9, '10': 'treatment'},
     {'1': 'observation', '3': 5, '4': 1, '5': 9, '10': 'observation'},
+    {'1': 'doctor_id', '3': 6, '4': 1, '5': 9, '10': 'doctorId'},
   ],
 };
 
@@ -78,7 +79,8 @@ const MedicalRecord$json = {
 final $typed_data.Uint8List medicalRecordDescriptor = $convert.base64Decode(
     'Cg1NZWRpY2FsUmVjb3JkEhsKCXJlY29yZF9pZBgBIAEoBVIIcmVjb3JkSWQSEgoEZGF0ZRgCIA'
     'EoA1IEZGF0ZRIcCgljb25kaXRpb24YAyABKAlSCWNvbmRpdGlvbhIcCgl0cmVhdG1lbnQYBCAB'
-    'KAlSCXRyZWF0bWVudBIgCgtvYnNlcnZhdGlvbhgFIAEoCVILb2JzZXJ2YXRpb24=');
+    'KAlSCXRyZWF0bWVudBIgCgtvYnNlcnZhdGlvbhgFIAEoCVILb2JzZXJ2YXRpb24SGwoJZG9jdG'
+    '9yX2lkGAYgASgJUghkb2N0b3JJZA==');
 
 @$core.Deprecated('Use allergyDescriptor instead')
 const Allergy$json = {
@@ -86,12 +88,14 @@ const Allergy$json = {
   '2': [
     {'1': 'name', '3': 1, '4': 1, '5': 9, '10': 'name'},
     {'1': 'level', '3': 2, '4': 1, '5': 5, '10': 'level'},
+    {'1': 'cause', '3': 3, '4': 1, '5': 9, '10': 'cause'},
   ],
 };
 
 /// Descriptor for `Allergy`. Decode as a `google.protobuf.DescriptorProto`.
 final $typed_data.Uint8List allergyDescriptor = $convert.base64Decode(
-    'CgdBbGxlcmd5EhIKBG5hbWUYASABKAlSBG5hbWUSFAoFbGV2ZWwYAiABKAVSBWxldmVs');
+    'CgdBbGxlcmd5EhIKBG5hbWUYASABKAlSBG5hbWUSFAoFbGV2ZWwYAiABKAVSBWxldmVsEhQKBW'
+    'NhdXNlGAMgASgJUgVjYXVzZQ==');
 
 @$core.Deprecated('Use medicalHistoryDescriptor instead')
 const MedicalHistory$json = {
@@ -260,4 +264,57 @@ const GetMedicalHistoryResponse$json = {
 final $typed_data.Uint8List getMedicalHistoryResponseDescriptor = $convert.base64Decode(
     'ChlHZXRNZWRpY2FsSGlzdG9yeVJlc3BvbnNlEkAKD21lZGljYWxfaGlzdG9yeRgBIAEoCzIXLn'
     'BhdGllbnQuTWVkaWNhbEhpc3RvcnlSDm1lZGljYWxIaXN0b3J5');
+
+@$core.Deprecated('Use addMedicalRecordsRequestDescriptor instead')
+const AddMedicalRecordsRequest$json = {
+  '1': 'AddMedicalRecordsRequest',
+  '2': [
+    {'1': 'patient_id', '3': 1, '4': 1, '5': 9, '10': 'patientId'},
+    {'1': 'medical_records', '3': 2, '4': 3, '5': 11, '6': '.patient.MedicalRecord', '10': 'medicalRecords'},
+  ],
+};
+
+/// Descriptor for `AddMedicalRecordsRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addMedicalRecordsRequestDescriptor = $convert.base64Decode(
+    'ChhBZGRNZWRpY2FsUmVjb3Jkc1JlcXVlc3QSHQoKcGF0aWVudF9pZBgBIAEoCVIJcGF0aWVudE'
+    'lkEj8KD21lZGljYWxfcmVjb3JkcxgCIAMoCzIWLnBhdGllbnQuTWVkaWNhbFJlY29yZFIObWVk'
+    'aWNhbFJlY29yZHM=');
+
+@$core.Deprecated('Use addMedicalRecordsResponseDescriptor instead')
+const AddMedicalRecordsResponse$json = {
+  '1': 'AddMedicalRecordsResponse',
+  '2': [
+    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+  ],
+};
+
+/// Descriptor for `AddMedicalRecordsResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addMedicalRecordsResponseDescriptor = $convert.base64Decode(
+    'ChlBZGRNZWRpY2FsUmVjb3Jkc1Jlc3BvbnNlEhgKB3N1Y2Nlc3MYASABKAhSB3N1Y2Nlc3M=');
+
+@$core.Deprecated('Use addAllergiesRequestDescriptor instead')
+const AddAllergiesRequest$json = {
+  '1': 'AddAllergiesRequest',
+  '2': [
+    {'1': 'patient_id', '3': 1, '4': 1, '5': 9, '10': 'patientId'},
+    {'1': 'allergies', '3': 2, '4': 3, '5': 11, '6': '.patient.Allergy', '10': 'allergies'},
+  ],
+};
+
+/// Descriptor for `AddAllergiesRequest`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addAllergiesRequestDescriptor = $convert.base64Decode(
+    'ChNBZGRBbGxlcmdpZXNSZXF1ZXN0Eh0KCnBhdGllbnRfaWQYASABKAlSCXBhdGllbnRJZBIuCg'
+    'lhbGxlcmdpZXMYAiADKAsyEC5wYXRpZW50LkFsbGVyZ3lSCWFsbGVyZ2llcw==');
+
+@$core.Deprecated('Use addAllergiesResponseDescriptor instead')
+const AddAllergiesResponse$json = {
+  '1': 'AddAllergiesResponse',
+  '2': [
+    {'1': 'success', '3': 1, '4': 1, '5': 8, '10': 'success'},
+  ],
+};
+
+/// Descriptor for `AddAllergiesResponse`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List addAllergiesResponseDescriptor = $convert.base64Decode(
+    'ChRBZGRBbGxlcmdpZXNSZXNwb25zZRIYCgdzdWNjZXNzGAEgASgIUgdzdWNjZXNz');
 

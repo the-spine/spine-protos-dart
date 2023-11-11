@@ -283,6 +283,7 @@ class MedicalRecord extends $pb.GeneratedMessage {
     $core.String? condition,
     $core.String? treatment,
     $core.String? observation,
+    $core.String? doctorId,
   }) {
     final $result = create();
     if (recordId != null) {
@@ -300,6 +301,9 @@ class MedicalRecord extends $pb.GeneratedMessage {
     if (observation != null) {
       $result.observation = observation;
     }
+    if (doctorId != null) {
+      $result.doctorId = doctorId;
+    }
     return $result;
   }
   MedicalRecord._() : super();
@@ -312,6 +316,7 @@ class MedicalRecord extends $pb.GeneratedMessage {
     ..aOS(3, _omitFieldNames ? '' : 'condition')
     ..aOS(4, _omitFieldNames ? '' : 'treatment')
     ..aOS(5, _omitFieldNames ? '' : 'observation')
+    ..aOS(6, _omitFieldNames ? '' : 'doctorId')
     ..hasRequiredFields = false
   ;
 
@@ -380,12 +385,22 @@ class MedicalRecord extends $pb.GeneratedMessage {
   $core.bool hasObservation() => $_has(4);
   @$pb.TagNumber(5)
   void clearObservation() => clearField(5);
+
+  @$pb.TagNumber(6)
+  $core.String get doctorId => $_getSZ(5);
+  @$pb.TagNumber(6)
+  set doctorId($core.String v) { $_setString(5, v); }
+  @$pb.TagNumber(6)
+  $core.bool hasDoctorId() => $_has(5);
+  @$pb.TagNumber(6)
+  void clearDoctorId() => clearField(6);
 }
 
 class Allergy extends $pb.GeneratedMessage {
   factory Allergy({
     $core.String? name,
     $core.int? level,
+    $core.String? cause,
   }) {
     final $result = create();
     if (name != null) {
@@ -393,6 +408,9 @@ class Allergy extends $pb.GeneratedMessage {
     }
     if (level != null) {
       $result.level = level;
+    }
+    if (cause != null) {
+      $result.cause = cause;
     }
     return $result;
   }
@@ -403,6 +421,7 @@ class Allergy extends $pb.GeneratedMessage {
   static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Allergy', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
     ..aOS(1, _omitFieldNames ? '' : 'name')
     ..a<$core.int>(2, _omitFieldNames ? '' : 'level', $pb.PbFieldType.O3)
+    ..aOS(3, _omitFieldNames ? '' : 'cause')
     ..hasRequiredFields = false
   ;
 
@@ -444,6 +463,15 @@ class Allergy extends $pb.GeneratedMessage {
   $core.bool hasLevel() => $_has(1);
   @$pb.TagNumber(2)
   void clearLevel() => clearField(2);
+
+  @$pb.TagNumber(3)
+  $core.String get cause => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set cause($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasCause() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearCause() => clearField(3);
 }
 
 class MedicalHistory extends $pb.GeneratedMessage {
@@ -1172,6 +1200,222 @@ class GetMedicalHistoryResponse extends $pb.GeneratedMessage {
   void clearMedicalHistory() => clearField(1);
   @$pb.TagNumber(1)
   MedicalHistory ensureMedicalHistory() => $_ensure(0);
+}
+
+class AddMedicalRecordsRequest extends $pb.GeneratedMessage {
+  factory AddMedicalRecordsRequest({
+    $core.String? patientId,
+    $core.Iterable<MedicalRecord>? medicalRecords,
+  }) {
+    final $result = create();
+    if (patientId != null) {
+      $result.patientId = patientId;
+    }
+    if (medicalRecords != null) {
+      $result.medicalRecords.addAll(medicalRecords);
+    }
+    return $result;
+  }
+  AddMedicalRecordsRequest._() : super();
+  factory AddMedicalRecordsRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddMedicalRecordsRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddMedicalRecordsRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'patientId')
+    ..pc<MedicalRecord>(2, _omitFieldNames ? '' : 'medicalRecords', $pb.PbFieldType.PM, subBuilder: MedicalRecord.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddMedicalRecordsRequest clone() => AddMedicalRecordsRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddMedicalRecordsRequest copyWith(void Function(AddMedicalRecordsRequest) updates) => super.copyWith((message) => updates(message as AddMedicalRecordsRequest)) as AddMedicalRecordsRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddMedicalRecordsRequest create() => AddMedicalRecordsRequest._();
+  AddMedicalRecordsRequest createEmptyInstance() => create();
+  static $pb.PbList<AddMedicalRecordsRequest> createRepeated() => $pb.PbList<AddMedicalRecordsRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddMedicalRecordsRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddMedicalRecordsRequest>(create);
+  static AddMedicalRecordsRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get patientId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set patientId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPatientId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPatientId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<MedicalRecord> get medicalRecords => $_getList(1);
+}
+
+class AddMedicalRecordsResponse extends $pb.GeneratedMessage {
+  factory AddMedicalRecordsResponse({
+    $core.bool? success,
+  }) {
+    final $result = create();
+    if (success != null) {
+      $result.success = success;
+    }
+    return $result;
+  }
+  AddMedicalRecordsResponse._() : super();
+  factory AddMedicalRecordsResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddMedicalRecordsResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddMedicalRecordsResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddMedicalRecordsResponse clone() => AddMedicalRecordsResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddMedicalRecordsResponse copyWith(void Function(AddMedicalRecordsResponse) updates) => super.copyWith((message) => updates(message as AddMedicalRecordsResponse)) as AddMedicalRecordsResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddMedicalRecordsResponse create() => AddMedicalRecordsResponse._();
+  AddMedicalRecordsResponse createEmptyInstance() => create();
+  static $pb.PbList<AddMedicalRecordsResponse> createRepeated() => $pb.PbList<AddMedicalRecordsResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddMedicalRecordsResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddMedicalRecordsResponse>(create);
+  static AddMedicalRecordsResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => clearField(1);
+}
+
+class AddAllergiesRequest extends $pb.GeneratedMessage {
+  factory AddAllergiesRequest({
+    $core.String? patientId,
+    $core.Iterable<Allergy>? allergies,
+  }) {
+    final $result = create();
+    if (patientId != null) {
+      $result.patientId = patientId;
+    }
+    if (allergies != null) {
+      $result.allergies.addAll(allergies);
+    }
+    return $result;
+  }
+  AddAllergiesRequest._() : super();
+  factory AddAllergiesRequest.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddAllergiesRequest.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddAllergiesRequest', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'patientId')
+    ..pc<Allergy>(2, _omitFieldNames ? '' : 'allergies', $pb.PbFieldType.PM, subBuilder: Allergy.create)
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddAllergiesRequest clone() => AddAllergiesRequest()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddAllergiesRequest copyWith(void Function(AddAllergiesRequest) updates) => super.copyWith((message) => updates(message as AddAllergiesRequest)) as AddAllergiesRequest;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddAllergiesRequest create() => AddAllergiesRequest._();
+  AddAllergiesRequest createEmptyInstance() => create();
+  static $pb.PbList<AddAllergiesRequest> createRepeated() => $pb.PbList<AddAllergiesRequest>();
+  @$core.pragma('dart2js:noInline')
+  static AddAllergiesRequest getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddAllergiesRequest>(create);
+  static AddAllergiesRequest? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.String get patientId => $_getSZ(0);
+  @$pb.TagNumber(1)
+  set patientId($core.String v) { $_setString(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasPatientId() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearPatientId() => clearField(1);
+
+  @$pb.TagNumber(2)
+  $core.List<Allergy> get allergies => $_getList(1);
+}
+
+class AddAllergiesResponse extends $pb.GeneratedMessage {
+  factory AddAllergiesResponse({
+    $core.bool? success,
+  }) {
+    final $result = create();
+    if (success != null) {
+      $result.success = success;
+    }
+    return $result;
+  }
+  AddAllergiesResponse._() : super();
+  factory AddAllergiesResponse.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory AddAllergiesResponse.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'AddAllergiesResponse', package: const $pb.PackageName(_omitMessageNames ? '' : 'patient'), createEmptyInstance: create)
+    ..aOB(1, _omitFieldNames ? '' : 'success')
+    ..hasRequiredFields = false
+  ;
+
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
+  'Will be removed in next major version')
+  AddAllergiesResponse clone() => AddAllergiesResponse()..mergeFromMessage(this);
+  @$core.Deprecated(
+  'Using this can add significant overhead to your binary. '
+  'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
+  'Will be removed in next major version')
+  AddAllergiesResponse copyWith(void Function(AddAllergiesResponse) updates) => super.copyWith((message) => updates(message as AddAllergiesResponse)) as AddAllergiesResponse;
+
+  $pb.BuilderInfo get info_ => _i;
+
+  @$core.pragma('dart2js:noInline')
+  static AddAllergiesResponse create() => AddAllergiesResponse._();
+  AddAllergiesResponse createEmptyInstance() => create();
+  static $pb.PbList<AddAllergiesResponse> createRepeated() => $pb.PbList<AddAllergiesResponse>();
+  @$core.pragma('dart2js:noInline')
+  static AddAllergiesResponse getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<AddAllergiesResponse>(create);
+  static AddAllergiesResponse? _defaultInstance;
+
+  @$pb.TagNumber(1)
+  $core.bool get success => $_getBF(0);
+  @$pb.TagNumber(1)
+  set success($core.bool v) { $_setBool(0, v); }
+  @$pb.TagNumber(1)
+  $core.bool hasSuccess() => $_has(0);
+  @$pb.TagNumber(1)
+  void clearSuccess() => clearField(1);
 }
 
 

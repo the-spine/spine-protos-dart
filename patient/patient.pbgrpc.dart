@@ -41,6 +41,14 @@ class PatientServiceClient extends $grpc.Client {
       '/patient.PatientService/GetMedicalHistory',
       ($0.GetMedicalHistoryRequest value) => value.writeToBuffer(),
       ($core.List<$core.int> value) => $0.GetMedicalHistoryResponse.fromBuffer(value));
+  static final _$addMedicalRecords = $grpc.ClientMethod<$0.AddMedicalRecordsRequest, $0.AddMedicalRecordsResponse>(
+      '/patient.PatientService/AddMedicalRecords',
+      ($0.AddMedicalRecordsRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.AddMedicalRecordsResponse.fromBuffer(value));
+  static final _$addAllergies = $grpc.ClientMethod<$0.AddAllergiesRequest, $0.AddAllergiesResponse>(
+      '/patient.PatientService/AddAllergies',
+      ($0.AddAllergiesRequest value) => value.writeToBuffer(),
+      ($core.List<$core.int> value) => $0.AddAllergiesResponse.fromBuffer(value));
 
   PatientServiceClient($grpc.ClientChannel channel,
       {$grpc.CallOptions? options,
@@ -66,6 +74,14 @@ class PatientServiceClient extends $grpc.Client {
 
   $grpc.ResponseFuture<$0.GetMedicalHistoryResponse> getMedicalHistory($0.GetMedicalHistoryRequest request, {$grpc.CallOptions? options}) {
     return $createUnaryCall(_$getMedicalHistory, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddMedicalRecordsResponse> addMedicalRecords($0.AddMedicalRecordsRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addMedicalRecords, request, options: options);
+  }
+
+  $grpc.ResponseFuture<$0.AddAllergiesResponse> addAllergies($0.AddAllergiesRequest request, {$grpc.CallOptions? options}) {
+    return $createUnaryCall(_$addAllergies, request, options: options);
   }
 }
 
@@ -109,6 +125,20 @@ abstract class PatientServiceBase extends $grpc.Service {
         false,
         ($core.List<$core.int> value) => $0.GetMedicalHistoryRequest.fromBuffer(value),
         ($0.GetMedicalHistoryResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddMedicalRecordsRequest, $0.AddMedicalRecordsResponse>(
+        'AddMedicalRecords',
+        addMedicalRecords_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AddMedicalRecordsRequest.fromBuffer(value),
+        ($0.AddMedicalRecordsResponse value) => value.writeToBuffer()));
+    $addMethod($grpc.ServiceMethod<$0.AddAllergiesRequest, $0.AddAllergiesResponse>(
+        'AddAllergies',
+        addAllergies_Pre,
+        false,
+        false,
+        ($core.List<$core.int> value) => $0.AddAllergiesRequest.fromBuffer(value),
+        ($0.AddAllergiesResponse value) => value.writeToBuffer()));
   }
 
   $async.Future<$0.RegisterPatientResponse> registerPatient_Pre($grpc.ServiceCall call, $async.Future<$0.RegisterPatientRequest> request) async {
@@ -131,9 +161,19 @@ abstract class PatientServiceBase extends $grpc.Service {
     return getMedicalHistory(call, await request);
   }
 
+  $async.Future<$0.AddMedicalRecordsResponse> addMedicalRecords_Pre($grpc.ServiceCall call, $async.Future<$0.AddMedicalRecordsRequest> request) async {
+    return addMedicalRecords(call, await request);
+  }
+
+  $async.Future<$0.AddAllergiesResponse> addAllergies_Pre($grpc.ServiceCall call, $async.Future<$0.AddAllergiesRequest> request) async {
+    return addAllergies(call, await request);
+  }
+
   $async.Future<$0.RegisterPatientResponse> registerPatient($grpc.ServiceCall call, $0.RegisterPatientRequest request);
   $async.Future<$0.GetPatientResponse> getPatient($grpc.ServiceCall call, $0.GetPatientRequest request);
   $async.Future<$0.UpdatePatientResponse> updatePatient($grpc.ServiceCall call, $0.UpdatePatientRequest request);
   $async.Future<$0.DeletePatientResponse> deletePatient($grpc.ServiceCall call, $0.DeletePatientRequest request);
   $async.Future<$0.GetMedicalHistoryResponse> getMedicalHistory($grpc.ServiceCall call, $0.GetMedicalHistoryRequest request);
+  $async.Future<$0.AddMedicalRecordsResponse> addMedicalRecords($grpc.ServiceCall call, $0.AddMedicalRecordsRequest request);
+  $async.Future<$0.AddAllergiesResponse> addAllergies($grpc.ServiceCall call, $0.AddAllergiesRequest request);
 }
